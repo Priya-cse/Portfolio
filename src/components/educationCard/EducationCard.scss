@@ -41,12 +41,13 @@
 }
 
 .education-roundedimg {
-  object-fit: cover;
+  object-fit: contain; /* show full logo, don't crop */
   margin-right: 2rem;
   width: 6rem;
   height: 6rem;
   box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
-  border-radius: 50%;
+  border-radius: 8px; /* slight rounding instead of circle to avoid cropping */
+  background: white; /* ensures transparent logos remain visible */
 }
 
 .education-card-right {

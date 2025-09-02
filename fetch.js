@@ -108,7 +108,11 @@ if (MEDIUM_USERNAME !== undefined) {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      console.log(`⚠️  Medium API returned status ${res.statusCode} - skipping Medium blogs fetch`);
+      // Drain the response to free up memory and allow the socket to close
+      // so this script can exit and not block `react-scripts start`.
+      res.resume();
+      return;
     }
 
     res.on("data", d => {
@@ -123,7 +127,7 @@ if (MEDIUM_USERNAME !== undefined) {
   });
 
   req.on("error", error => {
-    throw error;
+    console.log(`⚠️  Medium API request failed: ${error.message} - skipping Medium blogs fetch`);
   });
 
   req.end();
