@@ -1,11 +1,11 @@
 {
-  "homepage": "https://Priya-cse.github.io/priyaMalemath/",
+  "homepage": "https://Priya-cse.github.io/Portfolio/",
   "name": "developerfolio",
   "version": "0.1.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Priya-cse/priyaMalemath.git"
+    "url": "https://github.com/Priya-cse/Portfolio.git"
   },
   "dependencies": {
     "colorthief": "^2.3.0",
