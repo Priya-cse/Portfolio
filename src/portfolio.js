@@ -233,7 +233,7 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
+  title: "Things I've built",
   subtitle: "AI-DRIVEN SOLUTIONS AND INNOVATIVE PROJECTS I'VE DEVELOPED",
   projects: [
     {
@@ -375,8 +375,8 @@ const resumeSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "(+91) 9019529770",
+    "Open to collaboration and new opportunities. Feel free to reach out, I look forward to connecting.",
+  number: "",
   email_address: "mpriya1043@gmail.com"
 };
 
