@@ -309,7 +309,7 @@ const contactInfo = {
   subtitle:
     "OPEN TO COLLABORATION AND NEW OPPORTUNITIES. FEEL FREE TO REACH OUT, I LOOK FORWARD TO CONNECTING.",
   number: "",
-  email_address: "mpriya1043@gmail.com"
+  email_address: "priyamalemath@gmail.com"
 };
 
 // Twitter Section
