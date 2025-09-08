@@ -94,11 +94,17 @@ if (USE_GITHUB_DATA === "true") {
   req.end();
 }
 
-if (MEDIUM_USERNAME !== undefined) {
-  console.log(`Fetching Medium blogs data for ${MEDIUM_USERNAME}`);
+const mediumUser = (MEDIUM_USERNAME || "")
+  .trim()
+  .replace(/^@/, "")
+  .replace(/\s+/g, "");
+
+if (mediumUser) {
+  console.log(`Fetching Medium blogs data for ${mediumUser}`);
+  const rssUrl = encodeURIComponent(`https://medium.com/feed/@${mediumUser}`);
   const options = {
     hostname: "api.rss2json.com",
-    path: `/v1/api.json?rss_url=https://medium.com/feed/@${MEDIUM_USERNAME}`,
+    path: `/v1/api.json?rss_url=${rssUrl}`,
     port: 443,
     method: "GET"
   };
@@ -108,7 +114,7 @@ if (MEDIUM_USERNAME !== undefined) {
 
     console.log(`statusCode: ${res.statusCode}`);
     if (res.statusCode !== 200) {
-      throw new Error(ERR.requestMediumFailed);
+      throw new Error(ERR.requestFailedMedium);
     }
 
     res.on("data", d => {
